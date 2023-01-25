@@ -31,7 +31,6 @@ RegisterCommand('seat', function(src, args)
                 local getPlayerCurrentSeat = GetPedInVehicleSeat(vehicle, seat)
                 if (lastPlayerSeat ~= SEATS[tonumber(args[1])].val) then 
                     lastPlayerSeat = SEATS[tonumber(args[1])].val
-                    print(lastPlayerSeat, seat, getPlayerCurrentSeat)
                     ShowNotification(('Te has cambiado al asiento %s'):format(SEATS[tonumber(args[1])].label), 'success')
                     if (getPlayerCurrentSeat ~= seat) or (getPlayerCurrentSeat == 0) then  -- Esto porque el GTA va un poco de lado la verdad...
                         SetPedIntoVehicle(playerPed, vehicle, seat)
